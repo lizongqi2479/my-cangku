@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 全局样式 */
+:root {
+  --color-primary: #ed751a;
+  --color-gold: #dba835;
+}
+
+body {
+  font-family: 'Noto Serif SC', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 自定义动画 */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(237, 117, 26, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(237, 117, 26, 0.6);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* 名字卡片样式 */
+.name-card {
+  @apply bg-white rounded-2xl shadow-lg p-6 transition-all duration-300;
+}
+
+.name-card:hover {
+  @apply shadow-xl transform -translate-y-2;
+}
+
+/* 按钮样式 */
+.btn-primary {
+  @apply bg-gradient-to-r from-primary-500 to-primary-600 text-white font-bold py-3 px-6 rounded-full transition-all duration-300;
+}
+
+.btn-primary:hover {
+  @apply from-primary-600 to-primary-700 transform scale-105;
+}
+
+.btn-secondary {
+  @apply bg-white border-2 border-primary-500 text-primary-600 font-bold py-3 px-6 rounded-full transition-all duration-300;
+}
+
+.btn-secondary:hover {
+  @apply bg-primary-50 transform scale-105;
+}
+
+/* 输入框样式 */
+.input-field {
+  @apply w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary-500 focus:ring-4 focus:ring-primary-100 transition-all duration-300;
+}
+
+/* 标签样式 */
+.tag {
+  @apply inline-block px-3 py-1 rounded-full text-sm font-medium;
+}
+
+.tag-gold {
+  @apply bg-gold-100 text-gold-700;
+}
+
+.tag-primary {
+  @apply bg-primary-100 text-primary-700;
+}
+
+.tag-success {
+  @apply bg-green-100 text-green-700;
+}
